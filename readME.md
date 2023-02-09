@@ -2,4 +2,4 @@ Hello, I am Dan and this is my repository where I keep demos for training. All d
 
 Enjoy!
 
-If you have question, contact me through email.
+If you have question, contact me through my personal email.

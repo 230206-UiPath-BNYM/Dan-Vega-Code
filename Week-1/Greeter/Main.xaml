@@ -73,11 +73,6 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="userName" />
       <Variable x:TypeArguments="x:String" Name="nickName" />
-      <Variable x:TypeArguments="x:String" Name="email">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">default@email.com</Literal>
-        </Variable.Default>
-      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -92,9 +87,6 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_userName">
           <VisualBasicReference x:TypeArguments="x:String" ExpressionText="userName" />
         </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_email">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="email" />
-        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="338,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hi &quot; + userName + &quot; or should I say &quot; + nickName]" />

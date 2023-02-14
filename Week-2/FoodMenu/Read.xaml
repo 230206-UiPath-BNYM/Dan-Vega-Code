@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>810,1252</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>810,1283</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Read_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -62,7 +62,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Read" sap:VirtualizedContainerService.HintSize="400,1187" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Read" sap:VirtualizedContainerService.HintSize="400,1218" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -78,12 +78,17 @@
         <OutArgument x:TypeArguments="x:String">[out_itemPrice]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="338,239" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Chefs Special? T/F" Title="Menu">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Boolean must be uppercase." DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="338,270" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Chefs Special? TRUE/FALSE" Title="Menu">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:Boolean">[out_chefSpecial]</OutArgument>
       </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="338,239" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Valentines Item? T/F" Title="Menu">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="338,239" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Valentines Item? TRUE/FALSE" Title="Menu">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:Boolean">[out_valItem]</OutArgument>
       </ui:InputDialog.Result>

@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="List_Exercise" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1196,915" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="List_Exercise" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1196,3359" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:uascf="clr-namespace:UiPath.Activities.System.Collections.Filters;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -30,10 +30,11 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.IO</x:String>
-    </sco:Collection>
+      <x:String>UiPath.Activities.System.Collections.Filters</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="45">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -78,22 +79,26 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="List_Exercise" sap:VirtualizedContainerService.HintSize="498,850" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="List_Exercise" sap:VirtualizedContainerService.HintSize="540,3294" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="Irish_Pub_Names">
         <Variable.Default>
           <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">new List&lt;string&gt;(){"O'Malleys", "The cottage", "Harp and Celt"}</CSharpValue>
         </Variable.Default>
       </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="exists" />
+      <Variable x:TypeArguments="x:Int32" Name="index" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="Filtered_Pub_Names" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uasc:AppendItemToCollection x:TypeArguments="x:String" DisplayName="Append item to collection" sap:VirtualizedContainerService.HintSize="436,168" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
+    <uasc:AppendItemToCollection x:TypeArguments="x:String" DisplayName="Append item to collection" sap:VirtualizedContainerService.HintSize="478,241" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
       <uasc:AppendItemToCollection.Collection>
         <InArgument x:TypeArguments="scg:ICollection(x:String)">
           <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">Irish_Pub_Names</CSharpValue>
@@ -112,14 +117,14 @@
         </OutArgument>
       </uasc:AppendItemToCollection.Result>
     </uasc:AppendItemToCollection>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Irish_Pub_Names.Add(&quot;Shamrock&quot;);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Irish_Pub_Names.Add(&quot;Shamrock&quot;);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="478,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="Irish_Pub_Names">
           <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">Irish_Pub_Names</CSharpReference>
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,326" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="478,326" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -142,6 +147,148 @@
       <ui:ForEach.Values>
         <InArgument x:TypeArguments="sc:IEnumerable">
           <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">Irish_Pub_Names</CSharpValue>
+        </InArgument>
+      </ui:ForEach.Values>
+    </ui:ForEach>
+    <uasc:RemoveFromCollection x:TypeArguments="x:String" Index="{x:Null}" DisplayName="Remove from collection" sap:VirtualizedContainerService.HintSize="478,317" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_2" Item="O'Malleys" RemoveAllElements="False">
+      <uasc:RemoveFromCollection.Collection>
+        <InArgument x:TypeArguments="scg:ICollection(x:String)">
+          <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">Irish_Pub_Names</CSharpValue>
+        </InArgument>
+      </uasc:RemoveFromCollection.Collection>
+      <uasc:RemoveFromCollection.Result>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Irish_Pub_Names</CSharpReference>
+        </OutArgument>
+      </uasc:RemoveFromCollection.Result>
+    </uasc:RemoveFromCollection>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="478,326" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="name" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_2">
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">name</CSharpValue>
+              </InArgument>
+            </WriteLine>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <ui:ForEach.Values>
+        <InArgument x:TypeArguments="sc:IEnumerable">
+          <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">Irish_Pub_Names</CSharpValue>
+        </InArgument>
+      </ui:ForEach.Values>
+    </ui:ForEach>
+    <uasc:ExistsInCollection x:TypeArguments="x:String" DisplayName="Exists in collection" sap:VirtualizedContainerService.HintSize="478,292" sap2010:WorkflowViewState.IdRef="ExistsInCollection`1_2" Item="The Fighting Ducks">
+      <uasc:ExistsInCollection.Collection>
+        <InArgument x:TypeArguments="scg:ICollection(x:String)">
+          <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">Irish_Pub_Names</CSharpValue>
+        </InArgument>
+      </uasc:ExistsInCollection.Collection>
+      <uasc:ExistsInCollection.Exists>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">exists</CSharpReference>
+        </OutArgument>
+      </uasc:ExistsInCollection.Exists>
+      <uasc:ExistsInCollection.Index>
+        <OutArgument x:TypeArguments="x:Int32">
+          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">index</CSharpReference>
+        </OutArgument>
+      </uasc:ExistsInCollection.Index>
+    </uasc:ExistsInCollection>
+    <If sap:VirtualizedContainerService.HintSize="478,578" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">exists</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_3">
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">Irish_Pub_Names[index]</CSharpValue>
+            </InArgument>
+          </WriteLine>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Pub does not exists" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <uasc:FilterCollection x:TypeArguments="x:String" DisplayName="Filter collection" sap:VirtualizedContainerService.HintSize="478,292" sap2010:WorkflowViewState.IdRef="FilterCollection`1_2">
+      <uasc:FilterCollection.Collection>
+        <InArgument x:TypeArguments="scg:ICollection(x:String)">
+          <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">Irish_Pub_Names</CSharpValue>
+        </InArgument>
+      </uasc:FilterCollection.Collection>
+      <uasc:FilterCollection.Filter>
+        <uascf:CollectionFilterSettings LogicalOperator="And">
+          <uascf:CollectionFilterSettings.Filters>
+            <scg:List x:TypeArguments="uascf:Filter" Capacity="4">
+              <uascf:Filter x:TypeArguments="x:String" Criteria="CurrentItem" Value="o">
+                <uascf:Filter.Operator>
+                  <uascf:ContainsOperator />
+                </uascf:Filter.Operator>
+              </uascf:Filter>
+            </scg:List>
+          </uascf:CollectionFilterSettings.Filters>
+        </uascf:CollectionFilterSettings>
+      </uasc:FilterCollection.Filter>
+      <uasc:FilterCollection.FilterAction>
+        <InArgument x:TypeArguments="uascf:FilterAction">
+          <CSharpValue x:TypeArguments="uascf:FilterAction" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Activities.System.Collections.Filters.FilterAction.RemoveMatchingElements</CSharpValue>
+        </InArgument>
+      </uasc:FilterCollection.FilterAction>
+      <uasc:FilterCollection.Result>
+        <OutArgument x:TypeArguments="scg:List(x:String)">
+          <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">Filtered_Pub_Names</CSharpReference>
+        </OutArgument>
+      </uasc:FilterCollection.Result>
+    </uasc:FilterCollection>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="478,326" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="name" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_5">
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">name</CSharpValue>
+              </InArgument>
+            </WriteLine>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <ui:ForEach.Values>
+        <InArgument x:TypeArguments="sc:IEnumerable">
+          <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">Filtered_Pub_Names</CSharpValue>
         </InArgument>
       </ui:ForEach.Values>
     </ui:ForEach>

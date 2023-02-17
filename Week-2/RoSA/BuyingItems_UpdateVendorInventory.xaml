@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1169,1978</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>893,1886</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Vendor_Inventory_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -100,7 +100,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Vendor_Inventory" sap:VirtualizedContainerService.HintSize="698,1913" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Vendor_Inventory" sap:VirtualizedContainerService.HintSize="698,1821" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="walmart_ItemName_Qty_dt" />
     </Sequence.Variables>
@@ -109,31 +109,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="636,1802" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="636,1710" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,1715" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,1623" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,1604" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="ExcelFiles\VendorItems.xlsx">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,1512" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="ExcelFiles\VendorItems.xlsx">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1335" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1243" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="walmart_inventory_dict">
-                        <Variable.Default>
-                          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="new Dictionary(of String, String)" />
-                        </Variable.Default>
-                      </Variable>
+                      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[new Dictionary(of String, String)]" Name="walmart_inventory_dict" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,24 +137,6 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;WalMart&quot;).Range(&quot;B:C&quot;)]" SaveTo="[walmart_ItemName_Qty_dt]" />
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="444,52" sap2010:WorkflowViewState.IdRef="CommentOut_10">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,191" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:OutputDataTable Text="{x:Null}" DataTable="[walmart_ItemName_Qty_dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="338,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" />
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:CommentOut>
                     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[walmart_ItemName_Qty_dt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="444,391" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
@@ -214,14 +192,11 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:CommentOut>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="'Dim Qty As String&#xD;&#xA;'walmart_inventory_dict.TryGetValue(&quot;Water&quot;, Qty)&#xD;&#xA;&#xD;&#xA;'Console.WriteLine(Qty + &quot;cantidad&quot;)&#xD;&#xA;&#xD;&#xA;If d_item.Key.Equals(&quot;Water&quot;) Then&#xD;&#xA;&#x9;Console.WriteLine(d_item.Value)&#xD;&#xA;end if" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,165" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="'Dim Qty As String&#xA;'walmart_inventory_dict.TryGetValue(&quot;Water&quot;, Qty)&#xA;&#xA;'Console.WriteLine(Qty + &quot;cantidad&quot;)&#xA;'Console.WriteLine(d_item.Value)&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;If d_item.Key.Equals(&quot;Water&quot;) Then&#xA;&#x9;If d_item.Value.Equals(&quot;0&quot;)&#xA;&#x9;&#x9;Console.WriteLine(d_item.Key +&quot; Item is out of Stock.&quot;)&#xA;&#x9;End If&#xA;&#x9;If d_item.Value.Equals(&quot;NA&quot;)&#xA;&#x9;&#x9;Console.WriteLine(d_item.Key +&quot; Item is not available.&quot;)&#xA;&#x9;End If&#x9;&#x9;&#xA;End If&#xA;&#xA;If d_item.Key.Equals(&quot;Soda&quot;) Then&#xA;&#x9;If d_item.Value.Equals(&quot;0&quot;)&#xA;&#x9;&#x9;Console.WriteLine(d_item.Key +&quot; Item is out of Stock.&quot;)&#xA;&#x9;End If&#xA;&#x9;If d_item.Value.Equals(&quot;NA&quot;)&#xA;&#x9;&#x9;Console.WriteLine(d_item.Key +&quot; Item is not available.&quot;)&#xA;&#x9;End If&#x9;&#x9;&#xA;End If&#xA;&#xA;If d_item.Key.Equals(&quot;Chips&quot;) Then&#xA;&#x9;If d_item.Value.Equals(&quot;0&quot;)&#xA;&#x9;&#x9;Console.WriteLine(d_item.Key +&quot; Item is out of Stock.&quot;)&#xA;&#x9;End If&#xA;&#x9;If d_item.Value.Equals(&quot;NA&quot;)&#xA;&#x9;&#x9;Console.WriteLine(d_item.Key +&quot; Item is not available.&quot;)&#xA;&#x9;End If&#x9;&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,165" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
                               <ui:InvokeCode.Arguments>
-                                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="walmart_inventory_dict">
-                                  <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="walmart_inventory_dict" />
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" x:Key="d_item">
-                                  <VisualBasicReference x:TypeArguments="scg:KeyValuePair(x:String, x:String)" ExpressionText="d_item" />
-                                </InOutArgument>
+                                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="walmart_inventory_dict">[walmart_inventory_dict]</InOutArgument>
+                                <InOutArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" x:Key="d_item">[d_item]</InOutArgument>
+                                <OutArgument x:TypeArguments="x:Int32" x:Key="counter" />
                               </ui:InvokeCode.Arguments>
                             </ui:InvokeCode>
                           </Sequence>

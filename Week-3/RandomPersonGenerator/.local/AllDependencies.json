@@ -20763,9 +20763,9 @@
     "restore": {
       "projectUniqueName": "RandomPersonGenerator",
       "projectName": "RandomPersonGenerator",
-      "projectPath": "C:\\Users\\vegas\\Documents\\UiPath\\RandomPersonGenerator\\.local",
+      "projectPath": "C:\\Revature\\Dan-Vega-Code\\Week-3\\RandomPersonGenerator\\.local",
       "packagesPath": "C:\\Users\\vegas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vegas\\Documents\\UiPath\\RandomPersonGenerator\\.local"
+      "outputPath": "C:\\Revature\\Dan-Vega-Code\\Week-3\\RandomPersonGenerator\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
